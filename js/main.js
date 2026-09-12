@@ -137,9 +137,12 @@
     window.addEventListener("mouseup", function () {
       isDown = false;
       track.classList.remove("is-dragging");
+      // Clear after the drag's own click event so only that click is
+      // suppressed — later keyboard activation must keep working.
+      setTimeout(function () { moved = false; }, 0);
     });
     track.addEventListener("click", function (e) {
-      if (moved) { e.preventDefault(); }
+      if (moved) { e.preventDefault(); moved = false; }
     }, true);
   }
 
@@ -150,7 +153,10 @@
 
   function showQuote(i) {
     current = (i + quotes.length) % quotes.length;
-    quotes.forEach(function (q, n) { q.classList.toggle("is-active", n === current); });
+    quotes.forEach(function (q, n) {
+      q.classList.toggle("is-active", n === current);
+      q.setAttribute("aria-hidden", String(n !== current));
+    });
     dots.forEach(function (d, n) {
       d.classList.toggle("is-active", n === current);
       d.setAttribute("aria-selected", String(n === current));
@@ -169,6 +175,7 @@
     stage.addEventListener("mouseenter", function () { clearInterval(timer); });
     stage.addEventListener("mouseleave", startRotation);
   }
+  showQuote(0);
   startRotation();
 
   /* ── Animated line-icons when services scroll into view ── */
@@ -213,9 +220,11 @@
     else img.addEventListener("error", fallback);
   });
 
-  /* ── Quote form (front-end only — confirms receipt gracefully) ── */
+  /* ── Quote form — delivers the enquiry to the consultants'
+        WhatsApp line (no backend on this static site) ── */
   var form = document.getElementById("quoteForm");
   var note = document.getElementById("formNote");
+  var WHATSAPP_NUMBER = "263783208455"; // Precious · +263 78 320 8455
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -223,10 +232,24 @@
         form.reportValidity();
         return;
       }
-      var name = (form.name.value || "traveller").trim().split(/\s+/)[0];
-      note.textContent = "Thank you, " + name +
-        " — your enquiry is with our consultants. Expect a call within one business day.";
-      form.reset();
+      var f = form.elements;
+      var lines = [
+        "New quote request — Traverze website",
+        "Name: " + f.name.value.trim(),
+        "Email: " + f.email.value.trim(),
+        f.phone.value.trim() && "Phone: " + f.phone.value.trim(),
+        "Destination: " + f.destination.value,
+        f.dates.value.trim() && "Dates: " + f.dates.value.trim(),
+        f.message.value.trim() && "Trip notes: " + f.message.value.trim()
+      ].filter(Boolean);
+      var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" +
+        encodeURIComponent(lines.join("\n"));
+      window.open(url, "_blank", "noopener");
+      // Keep the entered values so nothing is lost if WhatsApp was blocked.
+      note.innerHTML = "Your enquiry is ready in WhatsApp — press <em>Send</em> there " +
+        "to reach our consultants. Didn't open? " +
+        '<a href="' + url + '" target="_blank" rel="noopener">Tap here</a> ' +
+        'or call <a href="tel:+263783208455">+263 78 320 8455</a>.';
     });
   }
 })();

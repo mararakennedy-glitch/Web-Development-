@@ -296,8 +296,10 @@ async function init() {
 
   function updateTooltip() {
     raycaster.setFromCamera(pointer, camera);
-    const hits = raycaster.intersectObjects(markerHits, false);
-    const hit = hits.length ? hits[0].object : null;
+    // Include the Earth so markers on the far side are occluded by it.
+    const hits = raycaster.intersectObjects([earth].concat(markerHits), false);
+    const first = hits.length ? hits[0].object : null;
+    const hit = first && first !== earth ? first : null;
     if (hit !== hovered) {
       hovered = hit;
       if (hovered) {

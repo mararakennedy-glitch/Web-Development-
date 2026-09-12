@@ -15,12 +15,17 @@
     });
   }
 
-  if (reducedMotion || typeof gsap === "undefined") {
+  if (reducedMotion || typeof gsap === "undefined" ||
+      typeof ScrollTrigger === "undefined" || typeof MotionPathPlugin === "undefined") {
     revealAllInstantly();
     return;
   }
 
-  gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+  // Only now hide the reveal elements — if anything below throws,
+  // the catch removes the class so content is never left invisible.
+  document.documentElement.classList.add("anim");
+  try {
+    gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
   /* ── Hero entrance ── */
   var intro = gsap.timeline({ defaults: { ease: "power4.out" } });
@@ -96,4 +101,8 @@
       scrollTrigger: { trigger: "#destinations", start: "top 75%" }
     });
   });
+  } catch (err) {
+    document.documentElement.classList.remove("anim");
+    revealAllInstantly();
+  }
 })();

@@ -269,7 +269,8 @@ button { font-family: inherit; }
 }
 .hero__title em { font-style: italic; color: var(--gold); }
 .hero__line { display: block; overflow: hidden; }
-.hero__line > span { display: inline-block; transform: translateY(110%); }
+.hero__line > span { display: inline-block; }
+.anim .hero__line > span { transform: translateY(110%); }
 .hero__sub {
   font-size: clamp(15px, 1.6vw, 19px);
   color: var(--ivory-60);
@@ -887,9 +888,10 @@ button { font-family: inherit; }
 .dest.img-missing::after, .why__media.img-missing::after { z-index: -1; }
 .dest.img-missing { background-clip: padding-box; }
 
-/* ── Reveal states (animated by GSAP; visible without JS) ───── */
-.js .reveal { opacity: 0; transform: translateY(30px); }
-.js .reveal-card { opacity: 0; transform: translateY(44px); }
+/* ── Reveal states — hidden only once scroll.js confirms GSAP is
+     ready and adds .anim; content stays visible if scripts fail ── */
+.anim .reveal { opacity: 0; transform: translateY(30px); }
+.anim .reveal-card { opacity: 0; transform: translateY(44px); }
 
 /* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 1024px) {
@@ -911,9 +913,13 @@ button { font-family: inherit; }
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     opacity: 0; pointer-events: none;
+    visibility: hidden; /* keep closed menu out of the keyboard focus order */
+    transition: opacity 0.4s var(--ease-lux), visibility 0s linear 0.4s;
+  }
+  .nav__links.is-open {
+    opacity: 1; pointer-events: auto; visibility: visible;
     transition: opacity 0.4s var(--ease-lux);
   }
-  .nav__links.is-open { opacity: 1; pointer-events: auto; }
   .nav__link { font-size: 15px; }
   .hero { padding-bottom: 110px; }
   .hero__ctas .btn { padding: 15px 28px; }
@@ -940,8 +946,8 @@ button { font-family: inherit; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .js .reveal, .js .reveal-card { opacity: 1; transform: none; }
-  .hero__line > span { transform: none; }
+  .anim .reveal, .anim .reveal-card { opacity: 1; transform: none; }
+  .anim .hero__line > span { transform: none; }
   .flightpath { display: none; }
   .grain { animation: none; }
 }
