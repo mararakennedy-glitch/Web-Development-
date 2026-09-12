@@ -29,6 +29,37 @@
     }
   });
 
+  /* ── Gold curtain sweep on nav-driven jumps ── */
+  var curtain = document.getElementById("curtain");
+  if (curtain && !reducedMotion) {
+    var sweeping = false;
+    function snapCurtainHome() {
+      curtain.classList.remove("is-in", "is-out");
+    }
+    document.querySelectorAll(".nav__link, .nav__cta").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        var id = link.getAttribute("href");
+        if (!id || id.charAt(0) !== "#" || sweeping) return;
+        var target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        sweeping = true;
+        curtain.classList.add("is-in");
+        setTimeout(function () {
+          if (id === "#top") window.scrollTo({ top: 0, behavior: "instant" });
+          else target.scrollIntoView({ behavior: "instant", block: "start" });
+          if (history.pushState) history.pushState(null, "", id);
+          curtain.classList.remove("is-in");
+          curtain.classList.add("is-out");
+          setTimeout(function () {
+            snapCurtainHome();
+            sweeping = false;
+          }, 520);
+        }, 400);
+      });
+    });
+  }
+
   /* ── Gold-ring cursor ── */
   if (finePointer && !reducedMotion) {
     var cursor = document.getElementById("cursor");

@@ -57,6 +57,25 @@ button { font-family: inherit; }
   border-radius: 2px;
 }
 
+/* ── Anchor targets clear the fixed navbar ──────────────────── */
+[id] { scroll-margin-top: calc(var(--nav-h) + 8px); }
+
+/* ── Gold curtain sweep (in-page navigation transition) ─────── */
+.curtain {
+  position: fixed; inset: 0; z-index: 400;
+  pointer-events: none;
+  transform: translateX(-101%);
+  background: linear-gradient(105deg, var(--brass) 0%, var(--gold) 45%, #E4C978 50%, var(--gold) 55%, var(--amber) 100%);
+}
+.curtain.is-in {
+  transform: translateX(0);
+  transition: transform 0.38s cubic-bezier(0.7, 0, 0.3, 1);
+}
+.curtain.is-out {
+  transform: translateX(101%);
+  transition: transform 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
 /* ── Film grain ─────────────────────────────────────────────── */
 .grain {
   position: fixed; inset: -50%;
