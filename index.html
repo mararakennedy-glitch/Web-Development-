@@ -3,36 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Traverze Travel — Travel Like A Pro</title>
-  <meta name="description" content="Traverze Travel — Zimbabwe's leading travel management company since 2003. Corporate travel, tailor-made holidays and the region's only agency-run executive lounge.">
+  <title>Traverze Travel | Luxury Travel Agency Zimbabwe — Flights, Safaris, Visas &amp; Packages</title>
+  <meta name="description" content="Traverze Travel — prestige African travel house since 2003. Curated safaris, international flights, visa assistance and chauffeured transfers from Harare, Zimbabwe. Travel Like A Pro.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Traverze Travel — Travel Like A Pro">
-  <meta property="og:description" content="Corporate travel, tailor-made holidays and Zimbabwe's only agency-run executive lounge. Harare · Lusaka, since 2003.">
+  <meta property="og:title" content="Traverze Travel | Luxury Travel Agency Zimbabwe">
+  <meta property="og:description" content="Extraordinary journeys, curated from the heart of Africa since 2003. Flights · Safaris · Visas · Packages.">
   <meta property="og:image" content="https://raw.githubusercontent.com/mararakennedy-glitch/Web-Development-/main/assets/logo.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="theme-color" content="#14171d">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0B2B26">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Traverze Travel",
+    "slogan": "Travel Like A Pro",
+    "foundingDate": "2003",
+    "url": "https://mararakennedy-glitch.github.io/Web-Development-/",
+    "logo": "https://raw.githubusercontent.com/mararakennedy-glitch/Web-Development-/main/assets/logo.png",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.3", "reviewCount": "97" },
+    "telephone": "+263 867 700 8684",
+    "sameAs": [
+      "https://facebook.com/TraverzeTravel",
+      "https://instagram.com/traverzetravel"
+    ],
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "1 Kenny Close, Avondale",
+        "addressLocality": "Harare",
+        "addressCountry": "ZW"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Shop 64, International Terminal 01, R.G. Mugabe International Airport",
+        "addressLocality": "Harare",
+        "addressCountry": "ZW"
+      }
+    ],
+    "areaServed": ["Zimbabwe", "Zambia", "South Africa", "United Arab Emirates", "Tanzania", "China", "Qatar"]
+  }
+  </script>
 </head>
-<body>
+<body data-theme="luxury">
 
-  <!-- ======= Navigation ======= -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- ══════════ Navigation ══════════ -->
   <header class="nav" id="nav">
-    <div class="nav__inner container">
-      <a href="#top" class="nav__brand">
-        <img class="nav__logo" src="assets/logo.png" alt="Traverze — Travel Like A Pro">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand" data-magnetic>
+        <img class="nav__logo" src="assets/logo.png" alt="Traverze Travel — Travel Like A Pro" width="150" height="44">
       </a>
-      <nav class="nav__links" id="navLinks" aria-label="Primary">
-        <a href="#destinations">Destinations</a>
-        <a href="#services">Services</a>
-        <a href="#story">Our Story</a>
-        <a href="#lounge">Lounge</a>
-        <a href="#contact" class="nav__cta">Plan a Trip</a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary navigation">
+        <a href="#top" class="nav__link">Home</a>
+        <a href="#packages" class="nav__link">Packages</a>
+        <a href="#destinations" class="nav__link">Destinations</a>
+        <a href="#services" class="nav__link">Services</a>
+        <a href="#journal" class="nav__link">Travel Journal</a>
+        <a href="#contact" class="nav__link">Contact</a>
+        <a href="#contact" class="nav__cta" data-magnetic>Get A Free Quote</a>
       </nav>
-      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span>
       </button>
     </div>
@@ -40,228 +79,596 @@
 
   <main id="top">
 
-    <!-- ======= Hero ======= -->
-    <section class="hero">
-      <div class="hero__art" aria-hidden="true">
-        <div class="hero__glow"></div>
-        <svg class="hero__scene" viewBox="0 0 1440 810" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-          <defs>
-            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#10131a"/>
-              <stop offset="0.55" stop-color="#1d2230"/>
-              <stop offset="0.8" stop-color="#5a4a33"/>
-              <stop offset="1" stop-color="#c9a24b"/>
-            </linearGradient>
-            <linearGradient id="ridgeA" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#23283a"/>
-              <stop offset="1" stop-color="#151823"/>
-            </linearGradient>
-            <linearGradient id="ridgeB" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#171b28"/>
-              <stop offset="1" stop-color="#0f1119"/>
-            </linearGradient>
-          </defs>
-          <rect width="1440" height="810" fill="url(#sky)"/>
-          <circle cx="1050" cy="600" r="110" fill="#e8c877" opacity="0.9"/>
-          <path d="M0 560 Q 260 470 520 545 T 1020 555 T 1440 520 V 810 H 0 Z" fill="url(#ridgeA)"/>
-          <path d="M0 640 Q 340 570 700 635 T 1440 625 V 810 H 0 Z" fill="url(#ridgeB)"/>
-          <path d="M0 730 Q 420 680 860 720 T 1440 705 V 810 H 0 Z" fill="#0b0d13"/>
-          <!-- acacia tree silhouette -->
-          <g fill="#0b0d13">
-            <path d="M1150 700 q 4 -60 8 -78 q 2 18 6 78 Z"/>
-            <path d="M1090 640 q 65 -42 140 -2 q -18 -20 -8 -26 q 30 14 58 30 q -70 -14 -120 6 q -46 -22 -70 -8 Z"/>
-          </g>
-          <!-- birds -->
-          <g stroke="#0b0d13" stroke-width="3" stroke-linecap="round" fill="none">
-            <path d="M880 300 q 10 -10 20 0 q 10 -10 20 0"/>
-            <path d="M950 340 q 8 -8 16 0 q 8 -8 16 0"/>
-            <path d="M820 360 q 7 -7 14 0 q 7 -7 14 0"/>
-          </g>
-        </svg>
+    <!-- ══════════ 1 · Hero — 3D Globe ══════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__canvas-wrap" aria-hidden="true">
+        <canvas id="globeCanvas"></canvas>
+        <div class="hero__static-fallback" id="heroFallback"></div>
+        <div class="hero__tooltip" id="globeTooltip" role="presentation"></div>
       </div>
-      <div class="hero__content container">
-        <p class="eyebrow reveal">Zimbabwe &middot; Zambia &middot; The World — Since 2003</p>
-        <h1 class="hero__title reveal">Travel Like<br><span>A&nbsp;Pro.</span></h1>
-        <p class="hero__lede reveal">Two decades of refined travel management — corporate journeys, tailor-made holidays and Zimbabwe's only agency-run executive lounge.</p>
-        <div class="hero__actions reveal">
-          <a class="btn btn--gold" href="#contact">Start Your Journey</a>
-          <a class="btn btn--ghost" href="#destinations">Explore Destinations</a>
+      <div class="hero__vignette" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">Prestige African Travel House · Est. 2003</p>
+        <h1 class="hero__title">
+          <span class="hero__line"><span>Travel</span></span>
+          <span class="hero__line"><span>Like <em>A</em> Pro.</span></span>
+        </h1>
+        <p class="hero__sub reveal">Extraordinary journeys, curated from the heart of Africa since 2003.</p>
+        <div class="hero__ctas reveal">
+          <a href="#packages" class="btn btn--gold" data-magnetic>Explore Packages</a>
+          <a href="#contact" class="btn btn--glass" data-magnetic>Get A Free Quote</a>
         </div>
       </div>
-      <a class="hero__scroll" href="#stats" aria-label="Scroll to content">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16m0 0l-6-6m6 6l6-6"/></svg>
+      <a href="#trust" class="hero__scroll-cue" aria-label="Scroll down">
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+        <span class="hero__scroll-text">Scroll</span>
       </a>
     </section>
 
-    <!-- ======= Stats ======= -->
-    <section class="stats" id="stats">
-      <div class="container stats__grid">
-        <div class="stat reveal"><span class="stat__num" data-count="23">0</span><span class="stat__suffix">+</span><p>Years of expertise</p></div>
-        <div class="stat reveal"><span class="stat__num" data-count="2">0</span><span class="stat__suffix"></span><p>Countries, Zimbabwe &amp; Zambia</p></div>
-        <div class="stat reveal"><span class="stat__num" data-count="1">0</span><span class="stat__suffix">st</span><p>Agency-run airport lounge</p></div>
-        <div class="stat reveal"><span class="stat__num" data-count="24">0</span><span class="stat__suffix">/7</span><p>Concierge availability</p></div>
-      </div>
-    </section>
-
-    <!-- ======= Destinations ======= -->
-    <section class="section" id="destinations">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow">Destinations</p>
-          <h2>Where will you<br>go next?</h2>
+    <!-- ══════════ 2 · Trust bar ══════════ -->
+    <section class="trust" id="trust" aria-label="Traverze Travel credentials">
+      <div class="trust__inner">
+        <div class="trust__item">
+          <span class="trust__num"><span class="count" data-count="2003" data-plain>2003</span></span>
+          <span class="trust__label">Curating journeys since</span>
         </div>
-        <div class="dest__grid">
-          <a class="dest dest--tall reveal" href="#contact" style="--tint1:#1d3a2f; --tint2:#0d1a15;">
-            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=70" alt="Elephants on safari at golden hour" loading="lazy" onerror="this.remove()">
-            <div class="dest__label"><span>Zimbabwe</span><h3>Victoria Falls &amp; Hwange</h3></div>
-          </a>
-          <a class="dest reveal" href="#contact" style="--tint1:#2f2410; --tint2:#191204;">
-            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=70" alt="Dubai skyline at dusk" loading="lazy" onerror="this.remove()">
-            <div class="dest__label"><span>Emirates</span><h3>Dubai</h3></div>
-          </a>
-          <a class="dest reveal" href="#contact" style="--tint1:#102438; --tint2:#081220;">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=70" alt="Turquoise water on a white-sand beach" loading="lazy" onerror="this.remove()">
-            <div class="dest__label"><span>Indian Ocean</span><h3>Zanzibar &amp; Mauritius</h3></div>
-          </a>
-          <a class="dest reveal" href="#contact" style="--tint1:#33202b; --tint2:#190f15;">
-            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=70" alt="Paris rooftops and the Eiffel Tower" loading="lazy" onerror="this.remove()">
-            <div class="dest__label"><span>Europe</span><h3>Paris &amp; Beyond</h3></div>
-          </a>
-          <a class="dest reveal" href="#contact" style="--tint1:#26303b; --tint2:#111820;">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=70" alt="Mountain peaks above the clouds at sunset" loading="lazy" onerror="this.remove()">
-            <div class="dest__label"><span>South Africa</span><h3>Cape Town</h3></div>
-          </a>
-          <a class="dest dest--wide reveal" href="#contact" style="--tint1:#1c2f3d; --tint2:#0c161e;">
-            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1400&q=70" alt="White villas above the sea in Santorini" loading="lazy" onerror="this.remove()">
-            <div class="dest__label"><span>Ocean Voyages</span><h3>Cruises &amp; Island Escapes</h3></div>
-          </a>
+        <span class="trust__divider" aria-hidden="true"></span>
+        <div class="trust__item">
+          <span class="trust__num">Zimbabwe &amp; Zambia</span>
+          <span class="trust__label">Two decades across the region</span>
+        </div>
+        <span class="trust__divider" aria-hidden="true"></span>
+        <div class="trust__item">
+          <span class="trust__num">4.3★ · <span class="count" data-count="97">97</span> reviews</span>
+          <span class="trust__label">Rated on Google</span>
+        </div>
+        <span class="trust__divider" aria-hidden="true"></span>
+        <div class="trust__item">
+          <span class="trust__num">Airport Office</span>
+          <span class="trust__label">R.G. Mugabe International, Terminal 01</span>
         </div>
       </div>
     </section>
 
-    <!-- ======= Services ======= -->
-    <section class="section section--dark" id="services">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow">What we do</p>
-          <h2>One agency.<br>Every detail handled.</h2>
-        </div>
-        <div class="services__grid">
-          <article class="service reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7h-9m9 5h-9m9 5h-9M4 7h.01M4 12h.01M4 17h.01"/><rect x="2" y="3" width="20" height="18" rx="2"/></svg>
-            <h3>Corporate Travel</h3>
-            <p>End-to-end travel management so your team can focus on business — fares, routes and class preferences optimised on every booking.</p>
-          </article>
-          <article class="service reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <h3>Tailor-Made Holidays</h3>
-            <p>Family escapes, honeymoons, adventure, religious and educational tours — each itinerary shaped to your taste and your budget.</p>
-          </article>
-          <article class="service reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-            <h3>Flights &amp; Fares</h3>
-            <p>The lowest available fares on your preferred routes and class — with every fare rule explained before a ticket is issued.</p>
-          </article>
-          <article class="service reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <h3>24/7 Concierge</h3>
-            <p>Around-the-clock support with pick-up from home or office. Wherever you are, whenever you call — we answer.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+    <!-- ══════════ Aircraft flight path (scroll-driven) ══════════ -->
+    <div class="flightpath" aria-hidden="true">
+      <svg class="flightpath__svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none">
+        <path id="contrail" d="M -80 700 C 300 620, 480 380, 720 420 S 1180 560, 1560 260"
+              stroke="url(#contrailGrad)" stroke-width="1.5" stroke-dasharray="6 10" opacity="0.85"/>
+        <defs>
+          <linearGradient id="contrailGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#C9A227" stop-opacity="0"/>
+            <stop offset="0.5" stop-color="#C9A227" stop-opacity="0.85"/>
+            <stop offset="1" stop-color="#D97B29" stop-opacity="0.55"/>
+          </linearGradient>
+          <linearGradient id="planeGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#F0DFAE"/>
+            <stop offset="0.55" stop-color="#C9A227"/>
+            <stop offset="1" stop-color="#8C6B1E"/>
+          </linearGradient>
+        </defs>
+        <g id="aircraft">
+          <path d="M 0 -4 L 34 0 L 0 4 L 6 1 L -12 12 L -16 10 L -2 0.6 L -14 0.6 L -18 5 L -21 5 L -19 0 L -21 -5 L -18 -5 L -14 -0.6 L -2 -0.6 L -16 -10 L -12 -12 L 6 -1 Z"
+                fill="url(#planeGrad)" stroke="#F7F3EA" stroke-opacity="0.35" stroke-width="0.5"/>
+        </g>
+      </svg>
+    </div>
 
-    <!-- ======= Story ======= -->
-    <section class="section" id="story">
-      <div class="container story">
-        <div class="story__text reveal">
-          <p class="eyebrow">Our Story</p>
-          <h2>Built on trust<br>since 2003.</h2>
-          <p>Founded in Harare by Zodwa Mkandla, Traverze Travel has grown into a leading travel management company across Zimbabwe and Zambia — an Emirates award-winner and World Travel Awards nominee.</p>
-          <p>From a single office to a regional name, one promise has never changed: every journey handled like it's our own.</p>
-          <a class="btn btn--dark" href="#contact">Talk to us</a>
-        </div>
-        <div class="story__panel reveal" aria-hidden="true">
-          <div class="story__card">
-            <span class="story__year">2003</span>
-            <p>Founded in Harare</p>
+    <!-- ══════════ 3 · Services ══════════ -->
+    <section class="services section" id="services">
+      <div class="section__head">
+        <p class="section__eyebrow reveal">What we do, impeccably</p>
+        <h2 class="section__title reveal">Every Detail, <em>Handled.</em></h2>
+      </div>
+      <div class="services__grid">
+        <article class="service glass reveal-card" tabindex="0">
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path class="draw" d="M6 34 L42 22 M42 22 L30 10 M42 22 L30 26 L14 16 M30 26 L26 38 L22 30"/>
+              <circle class="draw" cx="42" cy="22" r="2.5"/>
+            </svg>
           </div>
-          <div class="story__card story__card--gold">
-            <span class="story__year">1st</span>
-            <p>Executive lounge at Harare International Airport</p>
+          <h3 class="service__title">Flight Ticketing</h3>
+          <p class="service__text">International and regional airfare at professional rates — routed, ticketed and reconfirmed by consultants who fly these corridors weekly.</p>
+          <span class="service__index" aria-hidden="true">01</span>
+        </article>
+        <article class="service glass reveal-card" tabindex="0">
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path class="draw" d="M8 40 Q 14 20 24 20 T 40 40 M4 40 H44"/>
+              <circle class="draw" cx="33" cy="13" r="4"/>
+              <path class="draw" d="M20 40 L24 30 L28 40"/>
+            </svg>
           </div>
-          <div class="story__card">
-            <span class="story__year">2021</span>
-            <p>World Travel Awards nominee</p>
+          <h3 class="service__title">Holiday Packages</h3>
+          <p class="service__text">Curated local and international escapes — from Mana Pools river light to Cape Town crossings — composed end to end, insurance included.</p>
+          <span class="service__index" aria-hidden="true">02</span>
+        </article>
+        <article class="service glass reveal-card" tabindex="0">
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect class="draw" x="10" y="6" width="28" height="36" rx="3"/>
+              <path class="draw" d="M17 16 H31 M17 22 H31 M17 28 H25"/>
+              <path class="draw" d="M28 34 l3 3 l6 -6"/>
+            </svg>
           </div>
-        </div>
+          <h3 class="service__title">Visa Assistance</h3>
+          <p class="service__text">End-to-end visa application support — requirements decoded, documents assembled, embassies handled — so approvals arrive before anxiety does.</p>
+          <span class="service__index" aria-hidden="true">03</span>
+        </article>
+        <article class="service glass reveal-card" tabindex="0">
+          <div class="service__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path class="draw" d="M8 30 L12 18 Q13 15 16 15 H32 Q35 15 36 18 L40 30 M6 30 H42 V36 H6 Z"/>
+              <circle class="draw" cx="14" cy="36" r="3.5"/>
+              <circle class="draw" cx="34" cy="36" r="3.5"/>
+            </svg>
+          </div>
+          <h3 class="service__title">Transfers &amp; Vehicle Hire</h3>
+          <p class="service__text">Airport transfers and chauffeured vehicles that arrive early, wait patiently and drive like the trip has already begun.</p>
+          <span class="service__index" aria-hidden="true">04</span>
+        </article>
       </div>
     </section>
 
-    <!-- ======= Lounge ======= -->
-    <section class="lounge" id="lounge">
-      <div class="container lounge__inner">
-        <div class="reveal">
-          <p class="eyebrow eyebrow--gold">The Traverze Lounge</p>
-          <h2>Begin every journey<br>in comfort.</h2>
-          <p class="lounge__lede">The first — and only — executive lounge in Zimbabwe owned and run by a travel agency, right at Harare International Airport.</p>
-          <ul class="lounge__list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Quiet, refined pre-flight space</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Refreshments &amp; workspaces</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Priority assistance from our team</li>
-          </ul>
-        </div>
-        <div class="lounge__visual reveal" aria-hidden="true">
-          <svg viewBox="0 0 400 400" fill="none" aria-hidden="true">
-            <circle cx="200" cy="200" r="180" stroke="#c9a24b" stroke-width="1" opacity="0.35"/>
-            <circle cx="200" cy="200" r="140" stroke="#c9a24b" stroke-width="1" opacity="0.5"/>
-            <path d="M110 260 L200 110 L290 260" stroke="#c9a24b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M150 260 H250" stroke="#c9a24b" stroke-width="2" stroke-linecap="round"/>
-            <path d="M60 300 H340" stroke="#c9a24b" stroke-width="1" opacity="0.4" stroke-dasharray="2 8" stroke-linecap="round"/>
+    <!-- ══════════ 4 · Signature Packages ══════════ -->
+    <section class="packages section" id="packages">
+      <div class="section__head">
+        <p class="section__eyebrow reveal">Signature journeys · real prices</p>
+        <h2 class="section__title reveal">Discover Your Next <em>Adventure</em></h2>
+        <div class="compass" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="56" stroke="#C9A227" stroke-opacity="0.35" stroke-width="1"/>
+            <circle cx="60" cy="60" r="44" stroke="#C9A227" stroke-opacity="0.2" stroke-width="0.6"/>
+            <g class="compass__rose">
+              <path d="M60 8 L66 54 L60 60 L54 54 Z" fill="#C9A227"/>
+              <path d="M60 112 L66 66 L60 60 L54 66 Z" fill="#B08D3F" fill-opacity="0.6"/>
+              <path d="M8 60 L54 66 L60 60 L54 54 Z" fill="#B08D3F" fill-opacity="0.6"/>
+              <path d="M112 60 L66 66 L60 60 L66 54 Z" fill="#B08D3F" fill-opacity="0.6"/>
+            </g>
+            <circle cx="60" cy="60" r="4" fill="#F7F3EA"/>
           </svg>
         </div>
       </div>
+
+      <div class="packages__filters reveal" role="toolbar" aria-label="Filter packages">
+        <div class="filter-group">
+          <span class="filter-group__label">Destination</span>
+          <button class="chip is-active" data-filter-dest="all">All</button>
+          <button class="chip" data-filter-dest="zimbabwe">Zimbabwe</button>
+          <button class="chip" data-filter-dest="south-africa">South Africa</button>
+          <button class="chip" data-filter-dest="middle-east">Doha · Dubai</button>
+        </div>
+        <div class="filter-group">
+          <span class="filter-group__label">Style</span>
+          <button class="chip is-active" data-filter-style="all">All</button>
+          <button class="chip" data-filter-style="safari">Safari</button>
+          <button class="chip" data-filter-style="family">Family</button>
+          <button class="chip" data-filter-style="cruise">Cruise</button>
+          <button class="chip" data-filter-style="adventure">Adventure</button>
+        </div>
+      </div>
+
+      <div class="packages__grid" id="packagesGrid">
+
+        <article class="pkg tilt reveal-card" data-dest="zimbabwe" data-style="safari adventure">
+          <div class="pkg__inner">
+            <div class="pkg__media" data-depth="0.5">
+              <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=900&q=70" alt="Lioness at golden hour on the Zimbabwean savannah" loading="lazy">
+            </div>
+            <span class="pkg__badge pkg__badge--sale" data-depth="1.4">Save $30</span>
+            <div class="pkg__body" data-depth="1">
+              <span class="pkg__meta">Zimbabwe · 2 days</span>
+              <h3 class="pkg__title">Experience Zim in Rengwe</h3>
+              <p class="pkg__desc">Lion viewing safari, speedboat rides, fishing and scenic hikes.</p>
+              <div class="pkg__foot">
+                <span class="pkg__price"><s>$280</s> from <strong>$250</strong></span>
+                <a href="#contact" class="pkg__cta">View Details</a>
+              </div>
+            </div>
+            <span class="pkg__sweep" aria-hidden="true"></span>
+          </div>
+        </article>
+
+        <article class="pkg tilt reveal-card" data-dest="zimbabwe" data-style="safari family adventure">
+          <div class="pkg__inner">
+            <div class="pkg__media" data-depth="0.5">
+              <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?auto=format&fit=crop&w=900&q=70" alt="Rhino among the granite kopjes of Matobo National Park" loading="lazy">
+            </div>
+            <span class="pkg__badge pkg__badge--sale" data-depth="1.4">Save $215</span>
+            <div class="pkg__body" data-depth="1">
+              <span class="pkg__meta">Zimbabwe · 3 days</span>
+              <h3 class="pkg__title">Experience Zim in Matobo</h3>
+              <p class="pkg__desc">Game trails, rhino tracking, sacred cultural sites and family biking.</p>
+              <div class="pkg__foot">
+                <span class="pkg__price"><s>$620</s> from <strong>$405</strong></span>
+                <a href="#contact" class="pkg__cta">View Details</a>
+              </div>
+            </div>
+            <span class="pkg__sweep" aria-hidden="true"></span>
+          </div>
+        </article>
+
+        <article class="pkg tilt reveal-card" data-dest="zimbabwe" data-style="safari adventure">
+          <div class="pkg__inner">
+            <div class="pkg__media" data-depth="0.5">
+              <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=70" alt="Elephants gathering at a waterhole in Hwange at dusk" loading="lazy">
+            </div>
+            <span class="pkg__badge" data-depth="1.4">All-inclusive</span>
+            <div class="pkg__body" data-depth="1">
+              <span class="pkg__meta">Zimbabwe · 2 days</span>
+              <h3 class="pkg__title">Experience Zim in Deteema</h3>
+              <p class="pkg__desc">Birding, walking safaris and boat adventures — everything included.</p>
+              <div class="pkg__foot">
+                <span class="pkg__price">from <strong>$560</strong></span>
+                <a href="#contact" class="pkg__cta">View Details</a>
+              </div>
+            </div>
+            <span class="pkg__sweep" aria-hidden="true"></span>
+          </div>
+        </article>
+
+        <article class="pkg tilt reveal-card" data-dest="zimbabwe" data-style="safari family">
+          <div class="pkg__inner">
+            <div class="pkg__media" data-depth="0.5">
+              <img src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?auto=format&fit=crop&w=900&q=70" alt="Canoe safari on the Zambezi River at Mana Pools" loading="lazy">
+            </div>
+            <span class="pkg__badge" data-depth="1.4">Luxury</span>
+            <div class="pkg__body" data-depth="1">
+              <span class="pkg__meta">Zimbabwe · 2 days</span>
+              <h3 class="pkg__title">Experience Zim in Mana</h3>
+              <p class="pkg__desc">Luxury family safari — game drives, boat safaris, traditional cooking.</p>
+              <div class="pkg__foot">
+                <span class="pkg__price">from <strong>$640</strong></span>
+                <a href="#contact" class="pkg__cta">View Details</a>
+              </div>
+            </div>
+            <span class="pkg__sweep" aria-hidden="true"></span>
+          </div>
+        </article>
+
+        <article class="pkg tilt reveal-card" data-dest="south-africa" data-style="cruise family">
+          <div class="pkg__inner">
+            <div class="pkg__media" data-depth="0.5">
+              <img src="https://images.unsplash.com/photo-1577948000111-9c970dfe3743?auto=format&fit=crop&w=900&q=70" alt="Durban beachfront and Indian Ocean at sunrise" loading="lazy">
+            </div>
+            <span class="pkg__badge" data-depth="1.4">6 nights</span>
+            <div class="pkg__body" data-depth="1">
+              <span class="pkg__meta">South Africa · 4 days</span>
+              <h3 class="pkg__title">Durban Duets Cruise &amp; Resort</h3>
+              <p class="pkg__desc">A 6-night getaway — cruise, game drives and live entertainment.</p>
+              <div class="pkg__foot">
+                <span class="pkg__price">from <strong>$1,470</strong></span>
+                <a href="#contact" class="pkg__cta">View Details</a>
+              </div>
+            </div>
+            <span class="pkg__sweep" aria-hidden="true"></span>
+          </div>
+        </article>
+
+        <article class="pkg tilt reveal-card" data-dest="middle-east" data-style="adventure cruise">
+          <div class="pkg__inner">
+            <div class="pkg__media" data-depth="0.5">
+              <img src="https://images.unsplash.com/photo-1539475314840-751cdb4d0e5b?auto=format&fit=crop&w=900&q=70" alt="Doha skyline glowing across the bay at dusk" loading="lazy">
+            </div>
+            <span class="pkg__badge" data-depth="1.4">Guided</span>
+            <div class="pkg__body" data-depth="1">
+              <span class="pkg__meta">Doha · Dubai · 4 days</span>
+              <h3 class="pkg__title">Doha Delights</h3>
+              <p class="pkg__desc">Guided tours, desert adventure, dhow cruise and a seaside brunch.</p>
+              <div class="pkg__foot">
+                <span class="pkg__price">from <strong>$2,043</strong></span>
+                <a href="#contact" class="pkg__cta">View Details</a>
+              </div>
+            </div>
+            <span class="pkg__sweep" aria-hidden="true"></span>
+          </div>
+        </article>
+
+        <article class="pkg tilt reveal-card" data-dest="zimbabwe" data-style="adventure family">
+          <div class="pkg__inner">
+            <div class="pkg__media" data-depth="0.5">
+              <img src="https://images.unsplash.com/photo-1508737027454-e6454ef45afd?auto=format&fit=crop&w=900&q=70" alt="Misty waterfalls in the Eastern Highlands of Zimbabwe" loading="lazy">
+            </div>
+            <span class="pkg__badge" data-depth="1.4">3-night resort</span>
+            <div class="pkg__body" data-depth="1">
+              <span class="pkg__meta">Zimbabwe · Eastern Highlands</span>
+              <h3 class="pkg__title">Easter-n Waterfalls</h3>
+              <p class="pkg__desc">Nyangobe &amp; Nyamuziwa Falls, Mt. Nyangani hike, World's View, quad bikes.</p>
+              <div class="pkg__foot">
+                <span class="pkg__price"><strong>$440</strong>/pax</span>
+                <a href="#contact" class="pkg__cta">View Details</a>
+              </div>
+            </div>
+            <span class="pkg__sweep" aria-hidden="true"></span>
+          </div>
+        </article>
+
+        <article class="pkg tilt reveal-card" data-dest="south-africa" data-style="cruise">
+          <div class="pkg__inner">
+            <div class="pkg__media" data-depth="0.5">
+              <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=900&q=70" alt="Cruise liner leaving Cape Town beneath Table Mountain" loading="lazy">
+            </div>
+            <span class="pkg__badge pkg__badge--sale" data-depth="1.4">Flights included</span>
+            <div class="pkg__body" data-depth="1">
+              <span class="pkg__meta">South Africa · 3 nights</span>
+              <h3 class="pkg__title">MiCasa All Aboard Experience</h3>
+              <p class="pkg__desc">All-meals cruise, return flights Harare–Cape Town, live sets by MiCasa &amp; Mpho Pops.</p>
+              <div class="pkg__foot">
+                <span class="pkg__price"><strong>$900</strong>/pax</span>
+                <a href="#contact" class="pkg__cta">View Details</a>
+              </div>
+            </div>
+            <span class="pkg__sweep" aria-hidden="true"></span>
+          </div>
+        </article>
+
+      </div>
+      <p class="packages__note reveal">All trips include medical insurance.</p>
     </section>
 
-    <!-- ======= Contact ======= -->
-    <section class="section contact" id="contact">
-      <div class="container contact__inner">
-        <div class="reveal">
-          <p class="eyebrow">Get in touch</p>
-          <h2>Your next journey<br>starts with hello.</h2>
+    <!-- ══════════ 5 · Destinations showcase ══════════ -->
+    <section class="destinations" id="destinations" aria-label="Destinations we serve">
+      <div class="section__head section__head--inset">
+        <p class="section__eyebrow reveal">Five horizons, one passport</p>
+        <h2 class="section__title reveal">Where Shall We <em>Take You?</em></h2>
+      </div>
+      <div class="destinations__track" id="destTrack">
+        <a class="dest" href="#packages">
+          <img src="https://images.unsplash.com/photo-1603466182843-75f713ba06b6?auto=format&fit=crop&w=1200&q=70" alt="Victoria Falls thundering into the gorge" loading="lazy">
+          <div class="dest__label"><span class="dest__no">01</span><h3>Zimbabwe</h3><p>Victoria Falls · Hwange · Mana Pools</p></div>
+        </a>
+        <a class="dest" href="#packages">
+          <img src="https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1200&q=70" alt="Table Mountain over Cape Town at golden hour" loading="lazy">
+          <div class="dest__label"><span class="dest__no">02</span><h3>South Africa</h3><p>Cape Town · Durban · Garden Route</p></div>
+        </a>
+        <a class="dest" href="#packages">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=70" alt="Dubai skyline rising from the desert at dusk" loading="lazy">
+          <div class="dest__label"><span class="dest__no">03</span><h3>Dubai</h3><p>Desert dunes · Marina nights · Old souks</p></div>
+        </a>
+        <a class="dest" href="#packages">
+          <img src="https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1200&q=70" alt="Turquoise water and dhow off the Zanzibar coast" loading="lazy">
+          <div class="dest__label"><span class="dest__no">04</span><h3>Zanzibar</h3><p>Stone Town · Spice farms · Indian Ocean</p></div>
+        </a>
+        <a class="dest" href="#packages">
+          <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1200&q=70" alt="The Great Wall of China winding over green hills" loading="lazy">
+          <div class="dest__label"><span class="dest__no">05</span><h3>China</h3><p>Beijing · Shanghai · The Great Wall</p></div>
+        </a>
+      </div>
+      <p class="destinations__hint" aria-hidden="true">Drag · Scroll →</p>
+    </section>
+
+    <!-- ══════════ 6 · Why Traverze ══════════ -->
+    <section class="why section" id="why">
+      <div class="why__inner">
+        <div class="why__copy">
+          <p class="section__eyebrow reveal">Why Traverze</p>
+          <h2 class="section__title reveal">Embrace the Thrill<br>of the <em>Unknown</em></h2>
+          <ul class="why__list">
+            <li class="reveal">
+              <span class="why__num" aria-hidden="true">I</span>
+              <div><h3>Connect with nature</h3><p>Stand where the Zambezi breathes mist into the sky, and let the wild reset your sense of scale.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="why__num" aria-hidden="true">II</span>
+              <div><h3>Experience other cultures</h3><p>Share meals, markets and music from Stone Town to Doha — travel that changes how you see home.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="why__num" aria-hidden="true">III</span>
+              <div><h3>Create unforgettable memories</h3><p>Twenty-two years of journeys our travellers still talk about at dinner tables across two countries.</p></div>
+            </li>
+          </ul>
         </div>
-        <div class="contact__cards">
-          <a class="contact__card reveal" href="tel:+2634799792">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <h3>Call</h3>
-            <p>+263 4 799 792<br>+263 71 923 9230 (WhatsApp)</p>
-          </a>
-          <a class="contact__card reveal" href="mailto:enquiries@traverzetravel.co.zw">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-            <h3>Email</h3>
-            <p>enquiries@traverzetravel.co.zw</p>
-          </a>
-          <div class="contact__card reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <h3>Visit</h3>
-            <p>1 Kenny Close, Harare, Zimbabwe<br>Branch: Lusaka, Zambia</p>
+        <div class="why__media reveal-card" data-parallax="0.15">
+          <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1000&q=70" alt="Hot-air balloon drifting over the savannah at sunrise" loading="lazy">
+          <div class="why__balloon" aria-hidden="true">
+            <svg viewBox="0 0 60 90" fill="none">
+              <path d="M30 4 C 14 4 6 16 6 28 C 6 42 20 52 26 60 L34 60 C 40 52 54 42 54 28 C 54 16 46 4 30 4 Z" fill="url(#balloonGrad)" stroke="#F7F3EA" stroke-opacity="0.3"/>
+              <path d="M26 60 L27 70 H33 L34 60" stroke="#C9A227" stroke-width="1"/>
+              <rect x="25" y="70" width="10" height="9" rx="1.5" fill="#B08D3F"/>
+              <defs>
+                <linearGradient id="balloonGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#D97B29"/><stop offset="0.6" stop-color="#C9A227"/><stop offset="1" stop-color="#8C6B1E"/>
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ══════════ 7 · Testimonials ══════════ -->
+    <section class="testimonials section" id="testimonials">
+      <div class="section__head">
+        <p class="section__eyebrow reveal">In their words</p>
+        <h2 class="section__title reveal">Travellers Who <em>Returned</em> Glowing</h2>
+      </div>
+      <div class="testimonials__stage reveal" id="testimonialStage" aria-roledescription="carousel" aria-label="Google reviews">
+        <span class="testimonials__mark" aria-hidden="true">“</span>
+        <figure class="quote is-active" data-quote>
+          <blockquote>Great service. I got a package for my Vic Falls trip. It was the best experience ever… I definitely recommend it 200%.</blockquote>
+          <figcaption>— Tendai Pamela Khumalo</figcaption>
+        </figure>
+        <figure class="quote" data-quote>
+          <blockquote>Very helpful and professional. Cheers to Taura for excellent customer care.</blockquote>
+          <figcaption>— Takudzwa Chiringa</figcaption>
+        </figure>
+        <figure class="quote" data-quote>
+          <blockquote>Very professional, decent rates, friendly and knowledgeable staff.</blockquote>
+          <figcaption>— Voice of Concern</figcaption>
+        </figure>
+        <figure class="quote" data-quote>
+          <blockquote>Traverze — the best agency in Africa.</blockquote>
+          <figcaption>— Daniel Marimba</figcaption>
+        </figure>
+        <div class="testimonials__dots" role="tablist" aria-label="Choose review">
+          <button class="dot is-active" role="tab" aria-selected="true" aria-label="Review 1"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Review 2"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Review 3"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Review 4"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ 8 · Pricing highlights ══════════ -->
+    <section class="highlights section" id="highlights">
+      <div class="section__head">
+        <p class="section__eyebrow reveal">Featured this season</p>
+        <h2 class="section__title reveal">Two Journeys Worth <em>Clearing a Calendar</em> For</h2>
+      </div>
+      <div class="highlights__grid">
+        <article class="highlight glass reveal-card">
+          <span class="highlight__tier">Highlands Tier</span>
+          <h3>Easter-n Waterfalls</h3>
+          <p class="highlight__price">$<span class="count" data-count="440">440</span><small>/pax</small></p>
+          <ul>
+            <li>Nyangobe &amp; Nyamuziwa Falls</li>
+            <li>Mt. Nyangani sunrise hike &amp; World's View</li>
+            <li>Quad bikes · 3-night resort stay</li>
+          </ul>
+          <a href="#contact" class="btn btn--glass btn--small" data-magnetic>Reserve This Escape</a>
+        </article>
+        <article class="highlight glass highlight--feature reveal-card">
+          <span class="highlight__tier highlight__tier--gold">Signature Tier</span>
+          <h3>MiCasa All Aboard Experience</h3>
+          <p class="highlight__price">$<span class="count" data-count="900">900</span><small>/pax</small></p>
+          <ul>
+            <li>3-night cruise, all meals included</li>
+            <li>Return flights Harare – Cape Town</li>
+            <li>Live entertainment by MiCasa &amp; Mpho Pops</li>
+          </ul>
+          <a href="#contact" class="btn btn--gold btn--small" data-magnetic>Reserve This Escape</a>
+        </article>
+      </div>
+      <p class="highlights__note reveal">Every Traverze trip includes medical insurance — luxury begins with peace of mind.</p>
+    </section>
+
+    <!-- ══════════ 9 · Travel journal teaser ══════════ -->
+    <section class="journal section" id="journal">
+      <div class="journal__card glass reveal-card">
+        <div class="journal__meta">
+          <span class="journal__tag">Travel Journal · Advisory</span>
+          <time datetime="2025-09">September 2025</time>
+        </div>
+        <h2 class="journal__title">New Requirement: Passport Cover Page Now Mandatory for Dubai Visa Applications</h2>
+        <p class="journal__text">Applying for a Dubai visa? The UAE now requires a clear scan of your passport's cover page alongside the bio page. Our visa desk has updated every checklist — send us your documents and we'll take it from there.</p>
+        <a href="#contact" class="journal__link" data-magnetic>Ask our visa desk <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- ══════════ 10 · Contact / Quote ══════════ -->
+    <section class="contact section" id="contact">
+      <div class="section__head">
+        <p class="section__eyebrow reveal">Begin the journey</p>
+        <h2 class="section__title reveal">Get Your <em>Free Quote</em></h2>
+      </div>
+      <div class="contact__split">
+        <form class="contact__form glass reveal-card" id="quoteForm" action="#" method="post" novalidate>
+          <div class="field">
+            <label for="fName">Full name</label>
+            <input type="text" id="fName" name="name" autocomplete="name" required placeholder="Tendai Moyo">
+          </div>
+          <div class="field field--half">
+            <label for="fEmail">Email</label>
+            <input type="email" id="fEmail" name="email" autocomplete="email" required placeholder="you@example.com">
+          </div>
+          <div class="field field--half">
+            <label for="fPhone">Phone</label>
+            <input type="tel" id="fPhone" name="phone" autocomplete="tel" placeholder="+263 …">
+          </div>
+          <div class="field field--half">
+            <label for="fDest">Destination</label>
+            <select id="fDest" name="destination" required>
+              <option value="" disabled selected>Choose a destination</option>
+              <option>Zimbabwe</option>
+              <option>South Africa</option>
+              <option>Dubai</option>
+              <option>Zanzibar</option>
+              <option>China</option>
+              <option>Somewhere else — surprise me</option>
+            </select>
+          </div>
+          <div class="field field--half">
+            <label for="fDates">Travel dates</label>
+            <input type="text" id="fDates" name="dates" placeholder="e.g. 12 – 18 December">
+          </div>
+          <div class="field">
+            <label for="fMsg">Tell us about your trip</label>
+            <textarea id="fMsg" name="message" rows="4" placeholder="Who's travelling, what pace do you love, any dream moments?"></textarea>
+          </div>
+          <button type="submit" class="btn btn--gold btn--full" data-magnetic>Request My Quote</button>
+          <p class="contact__form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+
+        <aside class="contact__info">
+          <div class="contact__block reveal">
+            <h3>Head Office</h3>
+            <p>1 Kenny Close, Avondale,<br>Harare, Zimbabwe</p>
+          </div>
+          <div class="contact__block reveal">
+            <h3>Airport Office</h3>
+            <p>Shop 64, International Terminal 01,<br>R.G. Mugabe International Airport, Harare</p>
+          </div>
+          <div class="contact__block reveal">
+            <h3>Call Us</h3>
+            <p>
+              <a href="tel:+2638677008684">Home Office · +263 867 700 8684</a><br>
+              <a href="tel:+263783208455">Precious · +263 78 320 8455</a><br>
+              <a href="tel:+263242575506">Airport Office · +263 242 575 506</a>
+            </p>
+          </div>
+          <div class="contact__block reveal">
+            <h3>Follow the Journey</h3>
+            <p class="contact__socials">
+              <a href="https://facebook.com/TraverzeTravel" target="_blank" rel="noopener">Facebook</a>
+              <a href="https://instagram.com/traverzetravel" target="_blank" rel="noopener">Instagram</a>
+            </p>
+          </div>
+          <div class="contact__map reveal-card">
+            <iframe title="Traverze Travel Head Office — 1 Kenny Close, Avondale, Harare"
+              src="https://www.google.com/maps?q=1+Kenny+Close,+Avondale,+Harare,+Zimbabwe&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </aside>
       </div>
     </section>
   </main>
 
-  <!-- ======= Footer ======= -->
+  <!-- ══════════ 11 · Footer ══════════ -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <a href="#top" class="nav__brand footer__brand">
-        <img class="nav__logo" src="assets/logo.png" alt="Traverze — Travel Like A Pro">
-      </a>
-      <p class="footer__tag">Travel Like A Pro — since 2003.</p>
-      <p class="footer__legal">&copy; <span id="year"></span> Traverze Travel. Harare &middot; Lusaka.</p>
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.png" alt="Traverze Travel" width="170" height="50" loading="lazy">
+        <p class="footer__tagline">Travel Like A Pro — Discover the World, one Full Adventure at a Time!</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer navigation">
+        <h3>Explore</h3>
+        <a href="#packages">Packages</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#services">Services</a>
+        <a href="#journal">Travel Journal</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer__offices">
+        <h3>Offices</h3>
+        <p>1 Kenny Close, Avondale, Harare</p>
+        <p>Shop 64, Intl. Terminal 01, R.G. Mugabe International Airport</p>
+        <p><a href="tel:+2638677008684">+263 867 700 8684</a></p>
+      </div>
+      <div class="footer__social">
+        <h3>Social</h3>
+        <a href="https://facebook.com/TraverzeTravel" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://instagram.com/traverzetravel" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
+    <p class="footer__legal">© Traverze Travel 2026 · Curating extraordinary journeys since 2003</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="js/vendor/MotionPathPlugin.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/scroll.js" defer></script>
+  <script type="module" src="js/globe.js"></script>
 </body>
 </html>
